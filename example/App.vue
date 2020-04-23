@@ -1,9 +1,15 @@
 <template>
-  <div>App</div>
+  <div>
+    <flow-design-frame/>
+  </div>
 </template>
 
 <script>
-export default {
+import { FlowDesignFrame } from '@root/src/main'
 
+export default {
+  components: {
+    FlowDesignFrame
+  }
 }
 </script>

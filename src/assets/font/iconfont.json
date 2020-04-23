@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14145128",
+      "name": "减少",
+      "font_class": "jianshao",
+      "unicode": "e742",
+      "unicode_decimal": 59202
+    },
+    {
+      "icon_id": "14145136",
+      "name": "添加",
+      "font_class": "tianjia",
+      "unicode": "e741",
+      "unicode_decimal": 59201
+    }
+  ]
+}

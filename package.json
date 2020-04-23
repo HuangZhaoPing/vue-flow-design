@@ -42,6 +42,8 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^4.2.0",
     "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
     "sass-loader": "^8.0.2",
     "simple-progress-webpack-plugin": "^1.1.2",
     "style-loader": "^1.1.4",

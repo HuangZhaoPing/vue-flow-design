@@ -1,5 +1,6 @@
-const a = () => {
-  console.log('axxx')
-}
+import './assets/font/iconfont.css'
+import FlowDesignFrame from './components/FlowDesignFrame'
 
-console.log(a)
+export {
+  FlowDesignFrame
+}

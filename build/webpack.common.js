@@ -1,8 +1,12 @@
 const StyleLintPlugin = require('stylelint-webpack-plugin')
+const { resolve } = require('./utils')
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.json', '.jsx', '.css', '.vue']
+    extensions: ['.js', '.json', '.jsx', '.css', '.vue'],
+    alias: {
+      '@root': resolve()
+    }
   },
   module: {
     rules: [
@@ -26,6 +30,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ]
       },

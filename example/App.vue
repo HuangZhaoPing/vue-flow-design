@@ -1,15 +1,15 @@
 <template>
   <div>
-    <flow-design-frame/>
+    <vue-flow-design/>
   </div>
 </template>
 
 <script>
-import { FlowDesignFrame } from '@root/src/main'
+import { VueFlowDesign } from '@root/src/main'
 
 export default {
   components: {
-    FlowDesignFrame
+    VueFlowDesign
   }
 }
 </script>

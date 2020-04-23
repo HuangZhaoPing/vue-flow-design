@@ -1,6 +1,6 @@
 import './assets/font/iconfont.css'
-import FlowDesignFrame from './components/FlowDesignFrame'
+import VueFlowDesign from './components/VueFlowDesign'
 
 export {
-  FlowDesignFrame
+  VueFlowDesign
 }

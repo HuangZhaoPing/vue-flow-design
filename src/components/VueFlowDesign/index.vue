@@ -1,5 +1,5 @@
 <template>
-  <div class="flow-design-frame">
+  <div class="vue-flow-design">
     <zoom/>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.flow-design-frame {
+.vue-flow-design {
   position: relative;
 }
 </style>

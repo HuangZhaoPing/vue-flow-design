@@ -1,3 +1,9 @@
 module.exports = {
-  extends: 'stylelint-config-standard-scss'
+  extends: 'stylelint-config-sass-guidelines',
+  rules: {
+    'selector-pseudo-element-no-unknown': [
+      true,
+      { ignorePseudoElements: ['v-deep'] }
+    ]
+  }
 }

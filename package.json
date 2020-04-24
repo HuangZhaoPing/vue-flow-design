@@ -48,7 +48,7 @@
     "simple-progress-webpack-plugin": "^1.1.2",
     "style-loader": "^1.1.4",
     "stylelint": "^13.3.3",
-    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-webpack-plugin": "^1.2.3",
     "url-loader": "^4.1.0",
     "vue": "^2.6.11",

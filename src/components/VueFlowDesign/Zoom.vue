@@ -19,61 +19,60 @@ export default {
 <style lang="scss" scoped>
 $border-color: #dcdfe6;
 
-@mixin rounded-corners {
-  border: none;
-  outline: none;
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
-}
-
 .flow-design-zoom {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  align-items: center;
+  display: flex;
   height: 30px;
   line-height: 30px;
-  display: flex;
-  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
 
-  .percent-input {
-    text-align: center;
-    width: 60px;
-    font-size: 12px;
-    color: #606266;
-    box-sizing: border-box;
-    height: 100%;
+.percent-input {
+  @include border;
+  box-sizing: border-box;
+  color: #606266;
+  font-size: 12px;
+  height: 100%;
+  text-align: center;
+  width: 60px;
 
-    @include rounded-corners;
+  &:focus {
+    @include border;
+  }
+}
 
-    &:focus {
-      @include rounded-corners;
-    }
+> span {
+  background-color: #f5f7fa;
+  box-sizing: border-box;
+  color: #606266;
+  cursor: pointer;
+  font-size: 12px;
+  height: 100%;
+  text-align: center;
+  width: 35px;
+}
+
+.iconfont {
+  font-size: 12px;
+  font-weight: 700;
+
+  &.flow-design-zoom-decrease {
+    border: 1px solid $border-color;
+    border-radius: 4px 0 0 4px;
   }
 
-  > span {
-    font-size: 12px;
-    width: 35px;
-    height: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    background-color: #f5f7fa;
-    color: #606266;
-    cursor: pointer;
-
-    .iconfont {
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    &.flow-design-zoom-decrease {
-      border-radius: 4px 0 0 4px;
-      border: 1px solid $border-color;
-    }
-
-    &.flow-design-zoom-increase {
-      border-radius: 0 4px 4px 0;
-      border: 1px solid $border-color;
-    }
+  &.flow-design-zoom-increase {
+    border: 1px solid $border-color;
+    border-radius: 0 4px 4px 0;
   }
+}
+
+@mixin border {
+  border: 0;
+  border-bottom: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+  outline: none;
 }
 </style>

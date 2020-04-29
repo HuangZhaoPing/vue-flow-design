@@ -25,6 +25,10 @@ export default {
   flex-direction: column;
 }
 
+.vue-flow-design-node-wrap {
+  background-color: #fff;
+}
+
 .vue-flow-design-path {
   box-sizing: border-box;
   padding: 30px 0;

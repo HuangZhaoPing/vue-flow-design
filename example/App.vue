@@ -35,14 +35,6 @@ export default {
         { name: '节点1', id: 1 },
         { name: '节点2', id: 1 },
         [
-          [
-            { name: '节点2', id: 1 },
-            { name: '节点2', id: 1 },
-            [
-              [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }],
-              [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }]
-            ]
-          ],
           [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }],
           [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }]
         ],

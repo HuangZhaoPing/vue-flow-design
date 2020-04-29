@@ -7,7 +7,7 @@
         </el-card>
       </template>
 
-      <template v-slot:path-node="data">
+      <template v-slot:path="data">
         <el-popover placement="right" trigger="hover">
           <div>{{data}}</div>
           <el-button
@@ -35,7 +35,14 @@ export default {
         { name: '节点1', id: 1 },
         { name: '节点2', id: 1 },
         [
-          [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }],
+          [
+            { name: '节点2', id: 1 },
+            { name: '节点2', id: 1 },
+            [
+              [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }],
+              [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }]
+            ]
+          ],
           [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }],
           [{ name: '节点2', id: 1 }, { name: '节点2', id: 1 }]
         ],

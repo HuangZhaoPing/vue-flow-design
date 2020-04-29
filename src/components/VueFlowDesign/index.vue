@@ -10,21 +10,24 @@
           <template v-slot:node>
             <slot name="node" v-bind="item"/>
           </template>
-          <template v-slot:path-node>
-            <slot name="path-node" v-bind="item"/>
+          <template v-slot:path>
+            <slot name="path" v-bind="item"/>
           </template>
         </node>
 
         <node :key="index" v-else>
           <template v-slot:node>
             <tree-node :data="item">
-              <template v-slot:default="data">
-                {{data}}
+              <template v-slot:node="data">
+                <slot name="node" v-bind="data"/>
+              </template>
+              <template v-slot:path="data">
+                <slot name="path" v-bind="data"/>
               </template>
             </tree-node>
           </template>
-          <template v-slot:path-node>
-            <slot name="path-node" v-bind="item"/>
+          <template v-slot:path>
+            <slot name="path" v-bind="item"/>
           </template>
         </node>
       </template>

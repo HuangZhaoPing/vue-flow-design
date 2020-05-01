@@ -6,27 +6,30 @@
 
     <div class="vue-flow-design-wrap" :style="ratioStyle">
       <template v-for="(item, index) in data">
-        <node :key="index" v-if="!Array.isArray(item)">
-          <template v-slot:node>
-            <slot name="node" v-bind="item"/>
+        <node ref="node" :key="index" v-if="!Array.isArray(item)">
+          <template #node>
+            <slot name="node" v-bind="assembleData(item, index, data, $refs)"/>
           </template>
-          <template v-slot:path>
-            <slot name="path" v-bind="item"/>
+          <template #path>
+            <slot name="path" v-bind="{ data: item }"/>
           </template>
         </node>
 
         <node :key="index" v-else>
-          <template v-slot:node>
+          <template #node>
             <tree-node :data="item">
-              <template v-slot:node="data">
+              <template #fork>
+                <slot name="fork" v-bind="{ data: item }"/>
+              </template>
+              <template #node="data">
                 <slot name="node" v-bind="data"/>
               </template>
-              <template v-slot:path="data">
+              <template #path="data">
                 <slot name="path" v-bind="data"/>
               </template>
             </tree-node>
           </template>
-          <template v-slot:path>
+          <template #path>
             <slot name="path" v-bind="item"/>
           </template>
         </node>
@@ -39,8 +42,11 @@
 import Zoom from '../Zoom'
 import Node from './Node'
 import TreeNode from './TreeNode'
+import mixin from '@root/src/mixin'
 
 export default {
+  mixins: [mixin],
+
   components: {
     Zoom,
     Node,

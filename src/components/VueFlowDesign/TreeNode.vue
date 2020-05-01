@@ -1,33 +1,35 @@
 <template>
-  <div class="vue-flow-design-tree-node" style="padding-top: 45px;">
+  <div ref="treeNode" class="vue-flow-design-tree-node">
     <div ref="fork" class="vue-flow-design-tree-node-fork">
-      <p>saf</p>
-      <p>sadf</p>
+      <slot name="fork"/>
     </div>
-    <div style="display: flex;">
+    <div class="vue-flow-design-tree-node-wrap">
       <div v-for="(col, colIndex) in data" :key="colIndex" class="vue-flow-design-tree-node-col">
         <template v-for="(row, rowIndex) in col">
           <node :key="`${colIndex}-${rowIndex}`" v-if="!Array.isArray(row)">
-            <template v-slot:node>
+            <template #node>
               <slot name="node" v-bind="row"/>
             </template>
-            <template v-slot:path>
+            <template #path>
               <slot name="path" v-bind="row"/>
             </template>
           </node>
 
           <node :key="`${colIndex}-${rowIndex}`" v-else>
-            <template v-slot:node>
+            <template #node>
               <tree-node :data="row">
-                <template v-slot:node="data">
+                <template #fork>
+                  <slot name="fork" v-bind="row"/>
+                </template>
+                <template #node="data">
                   <slot name="node" v-bind="data"/>
                 </template>
-                <template v-slot:path="data">
+                <template #path="data">
                   <slot name="path" v-bind="data"/>
                 </template>
               </tree-node>
             </template>
-            <template v-slot:path>
+            <template #path>
               <slot name="path" v-bind="row"/>
             </template>
           </node>
@@ -67,6 +69,10 @@ export default {
     }
   },
 
+  mounted () {
+    this.$refs.treeNode.style.paddingTop = `${this.$refs.fork.clientHeight / 2}px`
+  },
+
   methods: {
     getLineAttrs (colIndex, index, length) {
       const lineAttrs = {}
@@ -104,8 +110,11 @@ export default {
   background-color: #fff;
   position: absolute;
   top: 0;
-  // transform: translateY(50%);
   z-index: 1;
+}
+
+.vue-flow-design-tree-node-wrap {
+  display: flex;
 }
 
 .vue-flow-design-tree-node-col {
